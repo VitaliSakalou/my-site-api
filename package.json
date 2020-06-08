@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "eslint ./"
+    "lint:js": "eslint . --ext .js,.jsx"
   },
   "keywords": [],
   "author": "",
@@ -35,9 +35,8 @@
     }
   },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx,json,css}": [
-      "prettier --write --config ./.prettierrc.js --config-precedence file-override",
-      "git add"
+    "*.js": [
+      "eslint"
     ]
   }
 }
